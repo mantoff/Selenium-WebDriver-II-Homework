@@ -3,6 +3,7 @@ package testframework;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -13,7 +14,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-public class Driver implements WebDriver {
+public class Driver implements WebDriver, JavascriptExecutor {
 
     private final WebDriver webDriver;
     private final WebDriverWait webDriverWait;
@@ -123,5 +124,15 @@ public class Driver implements WebDriver {
     // Add custom Driver methods
     public void scrollToElement(By locator) {
         actions.scrollToElement(webDriver.findElement(locator)).perform();
+    }
+
+    @Override
+    public Object executeScript(String script, Object... args) {
+        return null;
+    }
+
+    @Override
+    public Object executeAsyncScript(String script, Object... args) {
+        return null;
     }
 }
