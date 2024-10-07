@@ -17,6 +17,6 @@ public abstract class BaseWebTest {
 
     @AfterAll
     public static void afterAll() {
-        //driver().close();
+        driver().close();
     }
 }
